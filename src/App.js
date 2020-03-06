@@ -24,6 +24,13 @@ const App =() => {
     }
       return(
         <div className="App">
+          <div>
+            {formState.firstName.length < 2 && (<p>First Name Must Be Longer Than Two Characters.</p>)}
+            {formState.lastName.length < 2 && (<p>Last Name Must Be Longer Than Two Characters.</p>)}
+            {formState.email.length < 5 && (<p>Email Must Be Longer Than Five Characters.</p>)}
+            {formState.password.length < 8 && (<p>Password Must Be Longer Than Eight Characters.</p>)}
+            {formState.confirmPassword.length < 8 && (<p>Passwords Must Match.</p>)}
+          </div>
           <RegisterForm
           onChangeHandler={onChangeHandler}
           onSubmitHandler={onSubmitHandler}/> 
